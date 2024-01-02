@@ -26,10 +26,10 @@ actual_label= data[21000:,0]
 
 p=clf.predict(xtest)
 
-d= xtest[50]
+d= xtest[44]
 d.shape=(28,28)
-pt.imshow(255-d, cmap="gray")
-print(clf.predict([xtest[50]]))
+pt.imshow(255-d, cmap="turbo")
+print(clf.predict([xtest[44]]))
 
 pt.show()
 
@@ -38,4 +38,7 @@ pt.show()
 count=0
 for i in range(0,21000):
     count+=1 if p[i]==actual_label[i] else 0
-print("Accuracy=", (count/21000)*100)    
+accuracy = (count / len(actual_label)) * 100
+print("Accuracy =", accuracy)
+
+ 
